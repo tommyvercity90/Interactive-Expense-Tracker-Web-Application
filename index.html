@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Expense Tracker</h1>
+            <p>Manage your daily expenses easily</p>
+        </header>
+
+        <!-- Summary Cards -->
+        <section class="summary">
+            <div class="card">
+                <h3>Total Expenses</h3>
+                <h2 id="totalExpense">₹0.00</h2>
+            </div>
+
+            <div class="card">
+                <h3>Total Transactions</h3>
+                <h2 id="totalTransactions">0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Average Expense</h3>
+                <h2 id="averageExpense">₹0.00</h2>
+            </div>
+        </section>
+
+        <!-- Expense Form -->
+        <section class="form-section">
+            <h2 id="formHeading">Add New Expense</h2>
+
+            <form id="expenseForm">
+
+                <input type="text" id="title"
+                    placeholder="Expense title" required>
+
+                <input type="number" id="amount"
+                    placeholder="Amount (₹)"
+                    min="0.01" step="0.01" required>
+
+                <select id="category" required>
+                    <option value="">Select Category</option>
+                    <option value="Food">Food</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Bills">Bills</option>
+                    <option value="Education">Education</option>
+                    <option value="Health">Health</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <input type="date" id="date" required>
+
+                <button type="submit" id="submitBtn">
+                    Add Expense
+                </button>
+
+                <button type="button" id="cancelBtn"
+                    class="cancel-btn" hidden>
+                    Cancel Edit
+                </button>
+
+            </form>
+        </section>
+
+        <!-- Filters -->
+        <section class="filter-section">
+            <h2>Filter Expenses</h2>
+
+            <div class="filters">
+                <select id="filterCategory">
+                    <option value="All">All Categories</option>
+                    <option value="Food">Food</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Bills">Bills</option>
+                    <option value="Education">Education</option>
+                    <option value="Health">Health</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <input type="date" id="filterDate">
+
+                <select id="sortDate">
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                </select>
+
+                <button id="resetFilters" type="button">
+                    Reset Filters
+                </button>
+            </div>
+        </section>
+
+        <!-- Expense List -->
+        <section class="expense-section">
+            <h2>Expense History</h2>
+
+            <div id="expenseList">
+                <!-- Expenses will appear here -->
+            </div>
+        </section>
+
+        <!-- Category Summary -->
+        <section class="category-section">
+            <h2>Category Summary</h2>
+            <div id="categorySummary"></div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
